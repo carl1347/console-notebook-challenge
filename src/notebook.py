@@ -23,6 +23,11 @@ class Note:
          Date: {creation_date}
          {title}: {text}
 
+class Notebook:
+    def __innit__(self, notes: list[Note]):
+        self.notes: list[Note] = []
+
+
 
 
 
