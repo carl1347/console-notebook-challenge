@@ -33,3 +33,17 @@ class UI Notebook:
         for idx, nota in enumerate(self.notas):
             print(f"{idx + 1}. {nota['titulo']}")
 
+    def agregar_etiqueta(self):
+        self.listar_notas()
+        idx = int(input("Seleccione el número de nota: ")) - 1
+        etiqueta = input("Etiqueta a agregar: ")
+        self.notas[idx]['etiquetas'].append(etiqueta)
+        print("Etiqueta agregada.")
+
+    def listar_notas_importantes(self):
+        importantes = [n for n in self.notas if n['importante']]
+        if not importantes:
+            print("No hay notas importantes.")
+        for nota in importantes:
+            print(f"- {nota['titulo']}")
+
